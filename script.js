@@ -45,17 +45,62 @@ submit.onclick =function(){
         category:category.value
     }
     dataPro.push(newPro);
+    // save localstorage
     localStorage.setItem('product', JSON.stringify(dataPro));
     
+    clearData()
+    showData()
 
 }
 
 
-// save localstorage
 // clear inputs
+function clearData(){
+    title.value = ''
+    price.value = ''
+    taxes.value = ''
+    ads.value = ''
+    discount.value = ''
+    total.innerHTML = ''
+    count.value = ''
+    category.value = ''
+}
+
+
+
+
 // read
+function showData(){
+    let table = ''
+    for(let i = 0; i < dataPro.length; i++){
+        table += `
+
+            <tr>
+                <td>${i}</td>
+                <td>${dataPro[i].title}</td>
+                <td>${dataPro[i].parse}</td>
+                <td>${dataPro[i].taxes}</td>
+                <td>${dataPro[i].ads}</td>
+                <td>${dataPro[i].ads}</td>
+                <td>${dataPro[i].total}</td>
+                <td>${dataPro[i].category}</td>
+                <td><button>update</button></td>
+                <td><button>delete</button></td>
+            </tr> 
+        
+        `
+    }
+
+    document.getElementById("tbody").innerHTML = table  
+}
+showData()
+
+
+
+
+
 // count
 // delete
 //update
 // search
-// clean data
+// clean dataq
