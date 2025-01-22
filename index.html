@@ -27,13 +27,13 @@
         </div>
         <div class="outputs">
             <div class="searchBlock">
-                <input type="text" placeholder="search" id="search">
+                <input onkeyup="srarchData(this.value)" type="text" placeholder="search" id="search">
                 <div class="btnSearch">
-                    <button id="searchTitle">Search By Title</button>
-                    <button id="searchCategory">Search By category</button>
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By category</button>
                 </div>
             </div>
-
+            <div id="deleteAll"></div>
             <table>
                 <tr>
                     <th>id</th>
